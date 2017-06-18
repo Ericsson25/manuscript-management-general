@@ -1,0 +1,14 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://manuscript/module/manuscript/management/response" xmlns="http://manuscript/module/manuscript/management/bean"
+	xmlns:bean="http://manuscript/module/manuscript/management/bean" elementFormDefault="qualified">
+
+	<xsd:import namespace="http://manuscript/module/manuscript/management/bean" schemaLocation="manuscript.management.bean.xsd" />
+
+	<xsd:complexType name="authorPreloadResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				<xsd:sequence>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

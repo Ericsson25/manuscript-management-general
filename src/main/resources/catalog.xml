@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rewriteSystem systemIdStartString="http://manuscript/module/user/management/bean" rewritePrefix="maven:manuscript.module.user.management:user-management-general:jar::!/src/main/resources/user.management.bean.xsd" />
