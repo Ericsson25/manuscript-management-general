@@ -1,4 +1,4 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://manuscript/module/manuscript/management/response" xmlns="http://manuscript/module/manuscript/management/bean"
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://manuscript/module/manuscript/management/response" xmlns="http://manuscript/module/manuscript/management/response"
 	xmlns:bean="http://manuscript/module/manuscript/management/bean" elementFormDefault="qualified">
 
 	<xsd:import namespace="http://manuscript/module/manuscript/management/bean" schemaLocation="manuscript.management.bean.xsd" />
@@ -7,6 +7,47 @@
 		<xsd:complexContent>
 			<xsd:extension base="bean:basicResponse">
 				<xsd:sequence>
+					<xsd:element name="Submissions" type="bean:submission" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="reviewerPreloadResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				<xsd:sequence>
+					<xsd:element name="Submissions" type="bean:submission" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="editorPreloadResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				<xsd:sequence>
+					<xsd:element name="Submissions" type="bean:submission" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="fileUploadResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				<xsd:sequence>
+					<xsd:element name="Submission" type="bean:submission" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="getSubmissionDataResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				<xsd:sequence>
+					<xsd:element name="Submission" type="bean:submission" />
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

@@ -8,9 +8,8 @@
 
 package manuscript.module.manuscript.management.response;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -28,16 +27,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for authorPreloadResponse complex type.
+ * <p>Java class for getSubmissionDataResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authorPreloadResponse"&gt;
+ * &lt;complexType name="getSubmissionDataResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{http://manuscript/module/manuscript/management/bean}basicResponse"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Submissions" type="{http://manuscript/module/manuscript/management/bean}submission" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Submission" type="{http://manuscript/module/manuscript/management/bean}submission"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
@@ -47,45 +46,41 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authorPreloadResponse", propOrder = {
-    "submissions"
+@XmlType(name = "getSubmissionDataResponse", propOrder = {
+    "submission"
 })
-public class AuthorPreloadResponse
+public class GetSubmissionDataResponse
     extends BasicResponse
     implements HashCode2, ToString2
 {
 
-    @XmlElement(name = "Submissions")
+    @XmlElement(name = "Submission", required = true)
+    @NotNull
     @Valid
-    protected List<Submission> submissions;
+    protected Submission submission;
 
     /**
-     * Gets the value of the submissions property.
+     * Gets the value of the submission property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the submissions property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSubmissions().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Submission }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link Submission }
+     *     
      */
-    public List<Submission> getSubmissions() {
-        if (submissions == null) {
-            submissions = new ArrayList<Submission>();
-        }
-        return this.submissions;
+    public Submission getSubmission() {
+        return submission;
+    }
+
+    /**
+     * Sets the value of the submission property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Submission }
+     *     
+     */
+    public void setSubmission(Submission value) {
+        this.submission = value;
     }
 
     public String toString() {
@@ -105,9 +100,9 @@ public class AuthorPreloadResponse
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
-            List<Submission> theSubmissions;
-            theSubmissions = (((this.submissions!= null)&&(!this.submissions.isEmpty()))?this.getSubmissions():null);
-            strategy.appendField(locator, this, "submissions", buffer, theSubmissions, ((this.submissions!= null)&&(!this.submissions.isEmpty())));
+            Submission theSubmission;
+            theSubmission = this.getSubmission();
+            strategy.appendField(locator, this, "submission", buffer, theSubmission, (this.submission!= null));
         }
         return buffer;
     }
@@ -115,9 +110,9 @@ public class AuthorPreloadResponse
     public int hashCode(ObjectLocator locator, HashCodeStrategy2 strategy) {
         int currentHashCode = super.hashCode(locator, strategy);
         {
-            List<Submission> theSubmissions;
-            theSubmissions = (((this.submissions!= null)&&(!this.submissions.isEmpty()))?this.getSubmissions():null);
-            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "submissions", theSubmissions), currentHashCode, theSubmissions, ((this.submissions!= null)&&(!this.submissions.isEmpty())));
+            Submission theSubmission;
+            theSubmission = this.getSubmission();
+            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "submission", theSubmission), currentHashCode, theSubmission, (this.submission!= null));
         }
         return currentHashCode;
     }
@@ -125,14 +120,6 @@ public class AuthorPreloadResponse
     public int hashCode() {
         final HashCodeStrategy2 strategy = JAXBHashCodeStrategy.INSTANCE;
         return this.hashCode(null, strategy);
-    }
-
-    public void setSubmissions(List<Submission> value) {
-        this.submissions = null;
-        if (value!= null) {
-            List<Submission> draftl = this.getSubmissions();
-            draftl.addAll(value);
-        }
     }
 
 }

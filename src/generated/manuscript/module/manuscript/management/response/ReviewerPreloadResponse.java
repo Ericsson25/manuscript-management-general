@@ -28,12 +28,12 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for authorPreloadResponse complex type.
+ * <p>Java class for reviewerPreloadResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authorPreloadResponse"&gt;
+ * &lt;complexType name="reviewerPreloadResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{http://manuscript/module/manuscript/management/bean}basicResponse"&gt;
  *       &lt;sequence&gt;
@@ -47,10 +47,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authorPreloadResponse", propOrder = {
+@XmlType(name = "reviewerPreloadResponse", propOrder = {
     "submissions"
 })
-public class AuthorPreloadResponse
+public class ReviewerPreloadResponse
     extends BasicResponse
     implements HashCode2, ToString2
 {

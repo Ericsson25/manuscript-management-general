@@ -13,36 +13,46 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Role.
+ * <p>Java class for SubmissionStatus.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="Role"&gt;
+ * &lt;simpleType name="SubmissionStatus"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="AUTHOR_ROLE"/&gt;
- *     &lt;enumeration value="REVIEWER_ROLE"/&gt;
- *     &lt;enumeration value="EDITOR_ROLE"/&gt;
- *     &lt;enumeration value="ADMIN_ROLE"/&gt;
+ *     &lt;enumeration value="STARTED"/&gt;
+ *     &lt;enumeration value="SUBMITTED"/&gt;
+ *     &lt;enumeration value="ASSIGN_TO_REVIEWER"/&gt;
+ *     &lt;enumeration value="UNDER_REVIEW"/&gt;
+ *     &lt;enumeration value="UNDER_VERDICT"/&gt;
+ *     &lt;enumeration value="NEED_PRECISION"/&gt;
+ *     &lt;enumeration value="ACCEPTED"/&gt;
+ *     &lt;enumeration value="REJECTED"/&gt;
+ *     &lt;enumeration value="DELETED"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  * 
  */
-@XmlType(name = "Role")
+@XmlType(name = "SubmissionStatus")
 @XmlEnum
-public enum Role {
+public enum SubmissionStatus {
 
-    AUTHOR_ROLE,
-    REVIEWER_ROLE,
-    EDITOR_ROLE,
-    ADMIN_ROLE;
+    STARTED,
+    SUBMITTED,
+    ASSIGN_TO_REVIEWER,
+    UNDER_REVIEW,
+    UNDER_VERDICT,
+    NEED_PRECISION,
+    ACCEPTED,
+    REJECTED,
+    DELETED;
 
     public String value() {
         return name();
     }
 
-    public static Role fromValue(String v) {
+    public static SubmissionStatus fromValue(String v) {
         return valueOf(v);
     }
 

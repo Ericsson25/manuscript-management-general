@@ -5,5 +5,5 @@
 // Generated on: 2017.06.27 at 09:08:26 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://manuscript/module/manuscript/management/bean", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package manuscript.module.manuscript.management.bean;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://manuscript/module/manuscript/management/request", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package manuscript.module.manuscript.management.request;

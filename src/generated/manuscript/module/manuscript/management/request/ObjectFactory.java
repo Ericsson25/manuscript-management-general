@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.manuscript.management.request;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the manuscript.module.manuscript.management.bean package. 
+ * generated in the manuscript.module.manuscript.management.request package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,50 +30,18 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: manuscript.module.manuscript.management.bean
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: manuscript.module.manuscript.management.request
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link BasicResponse }
+     * Create an instance of {@link SaveSubmissionRequest }
      * 
      */
-    public BasicResponse createBasicResponse() {
-        return new BasicResponse();
-    }
-
-    /**
-     * Create an instance of {@link Submission }
-     * 
-     */
-    public Submission createSubmission() {
-        return new Submission();
-    }
-
-    /**
-     * Create an instance of {@link Author }
-     * 
-     */
-    public Author createAuthor() {
-        return new Author();
-    }
-
-    /**
-     * Create an instance of {@link Submitter }
-     * 
-     */
-    public Submitter createSubmitter() {
-        return new Submitter();
-    }
-
-    /**
-     * Create an instance of {@link Keyword }
-     * 
-     */
-    public Keyword createKeyword() {
-        return new Keyword();
+    public SaveSubmissionRequest createSaveSubmissionRequest() {
+        return new SaveSubmissionRequest();
     }
 
 }

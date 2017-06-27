@@ -1,0 +1,16 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://manuscript/module/manuscript/management/request" xmlns="http://manuscript/module/manuscript/management/request"
+	xmlns:bean="http://manuscript/module/manuscript/management/bean" elementFormDefault="qualified">
+
+	<xsd:import namespace="http://manuscript/module/manuscript/management/bean" schemaLocation="manuscript.management.bean.xsd" />
+
+	<xsd:complexType name="saveSubmissionRequest">
+		<xsd:sequence>
+			<xsd:element name="submissionId" type="xsd:string" />
+			<xsd:element name="submissionStatus" type="bean:SubmissionStatus" />
+			<xsd:element name="authorId" type="xsd:string" />
+			<xsd:element name="filePath" type="xsd:string" />
+			<xsd:element name="version" type="xsd:int" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
