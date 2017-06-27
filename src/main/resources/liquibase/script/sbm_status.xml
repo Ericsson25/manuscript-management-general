@@ -16,6 +16,9 @@
 
 	<changeSet id="init-table-sbm-status" author="balazskovacs">
 		<insert tableName="SBM_STATUS">
+			<column name="STATUS" value="STARTED" />
+		</insert>
+		<insert tableName="SBM_STATUS">
 			<column name="STATUS" value="SUBMITTED" />
 		</insert>
 		<insert tableName="SBM_STATUS">
@@ -35,6 +38,9 @@
 		</insert>
 		<insert tableName="SBM_STATUS">
 			<column name="STATUS" value="REJECTED" />
+		</insert>
+		<insert tableName="SBM_STATUS">
+			<column name="STATUS" value="DELETED" />
 		</insert>
 	</changeSet>
 </databaseChangeLog>

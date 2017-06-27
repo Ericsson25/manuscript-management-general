@@ -14,12 +14,6 @@
 			<column name="SUBMISSION_ID" type="VARCHAR(60)">
 				<constraints foreignKeyName="fk_sbm_author_submission_id" referencedTableName="SBM_SUBMISSION" referencedColumnNames="SUBMISSION_ID" />
 			</column>
-			<column name="EMAIL" type="VARCHAR(100)">
-				<constraints nullable="false" />
-			</column>
-			<column name="FIRST_NAME" type="VARCHAR(50)" />
-			<column name="LAST_NAME" type="VARCHAR(50)" />
-			<column name="PENDING_REQUEST" type="BOOLEAN" />
 		</createTable>
 	</changeSet>
 </databaseChangeLog>
