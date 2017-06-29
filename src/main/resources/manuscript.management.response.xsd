@@ -32,7 +32,7 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
+
 	<xsd:complexType name="fileUploadResponse">
 		<xsd:complexContent>
 			<xsd:extension base="bean:basicResponse">
@@ -42,7 +42,7 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
+
 	<xsd:complexType name="getSubmissionDataResponse">
 		<xsd:complexContent>
 			<xsd:extension base="bean:basicResponse">
@@ -52,4 +52,15 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+
+	<xsd:complexType name="SaveSubmissionDataResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				<xsd:sequence>
+					<xsd:element name="Submission" type="bean:submission" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
 </xsd:schema>

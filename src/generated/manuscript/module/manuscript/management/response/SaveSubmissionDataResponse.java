@@ -27,12 +27,12 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for fileUploadResponse complex type.
+ * <p>Java class for SaveSubmissionDataResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="fileUploadResponse"&gt;
+ * &lt;complexType name="SaveSubmissionDataResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{http://manuscript/module/manuscript/management/bean}basicResponse"&gt;
  *       &lt;sequence&gt;
@@ -46,10 +46,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "fileUploadResponse", propOrder = {
+@XmlType(name = "SaveSubmissionDataResponse", propOrder = {
     "submission"
 })
-public class FileUploadResponse
+public class SaveSubmissionDataResponse
     extends BasicResponse
     implements HashCode2, ToString2
 {

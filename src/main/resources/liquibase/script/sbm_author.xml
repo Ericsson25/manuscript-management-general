@@ -5,14 +5,11 @@
 
 	<changeSet id="create-table-sbm-author" author="balazskovacs">
 		<createTable tableName="SBM_AUTHORS">
-			<column name="ID" type="INT(5)" autoIncrement="true" startWith="1" incrementBy="1">
-				<constraints primaryKey="true" />
-			</column>
 			<column name="AUTHOR_ID" type="INT(5)">
-				<constraints foreignKeyName="fk_sbm_author_author_id" referencedTableName="USR_USER" referencedColumnNames="USER_ID" />
+				<constraints primaryKey="true" foreignKeyName="fk_sbm_author_author_id" referencedTableName="USR_USER" referencedColumnNames="USER_ID" />
 			</column>
 			<column name="SUBMISSION_ID" type="VARCHAR(60)">
-				<constraints foreignKeyName="fk_sbm_author_submission_id" referencedTableName="SBM_SUBMISSION" referencedColumnNames="SUBMISSION_ID" />
+				<constraints primaryKey="true" foreignKeyName="fk_sbm_author_submission_id" referencedTableName="SBM_SUBMISSION" referencedColumnNames="SUBMISSION_ID" />
 			</column>
 		</createTable>
 	</changeSet>

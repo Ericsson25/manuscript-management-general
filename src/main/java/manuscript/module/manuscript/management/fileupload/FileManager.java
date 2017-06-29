@@ -23,4 +23,6 @@ public interface FileManager {
 	 */
 	public void deleteFile(File file);
 
+	public void checkFileExistenceOnFileSystem(String path);
+
 }

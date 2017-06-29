@@ -24,19 +24,17 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for submitter complex type.
+ * <p>Java class for checkSubmissionExistence complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="submitter"&gt;
+ * &lt;complexType name="checkSubmissionExistence"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="submissionId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="submitterId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="FirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="LastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -46,27 +44,43 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "submitter", propOrder = {
-    "submitterId",
-    "email",
-    "firstName",
-    "lastName"
+@XmlType(name = "checkSubmissionExistence", propOrder = {
+    "submissionId",
+    "submitterId"
 })
-public class Submitter implements HashCode2, ToString2
+public class CheckSubmissionExistence implements HashCode2, ToString2
 {
 
     @XmlElement(required = true)
     @NotNull
+    protected String submissionId;
+    @XmlElement(required = true)
+    @NotNull
     protected String submitterId;
-    @XmlElement(name = "Email", required = true)
-    @NotNull
-    protected String email;
-    @XmlElement(name = "FirstName", required = true)
-    @NotNull
-    protected String firstName;
-    @XmlElement(name = "LastName", required = true)
-    @NotNull
-    protected String lastName;
+
+    /**
+     * Gets the value of the submissionId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSubmissionId() {
+        return submissionId;
+    }
+
+    /**
+     * Sets the value of the submissionId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSubmissionId(String value) {
+        this.submissionId = value;
+    }
 
     /**
      * Gets the value of the submitterId property.
@@ -92,78 +106,6 @@ public class Submitter implements HashCode2, ToString2
         this.submitterId = value;
     }
 
-    /**
-     * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
-
-    /**
-     * Gets the value of the firstName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Sets the value of the firstName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFirstName(String value) {
-        this.firstName = value;
-    }
-
-    /**
-     * Gets the value of the lastName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Sets the value of the lastName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLastName(String value) {
-        this.lastName = value;
-    }
-
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -180,24 +122,14 @@ public class Submitter implements HashCode2, ToString2
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
+            String theSubmissionId;
+            theSubmissionId = this.getSubmissionId();
+            strategy.appendField(locator, this, "submissionId", buffer, theSubmissionId, (this.submissionId!= null));
+        }
+        {
             String theSubmitterId;
             theSubmitterId = this.getSubmitterId();
             strategy.appendField(locator, this, "submitterId", buffer, theSubmitterId, (this.submitterId!= null));
-        }
-        {
-            String theEmail;
-            theEmail = this.getEmail();
-            strategy.appendField(locator, this, "email", buffer, theEmail, (this.email!= null));
-        }
-        {
-            String theFirstName;
-            theFirstName = this.getFirstName();
-            strategy.appendField(locator, this, "firstName", buffer, theFirstName, (this.firstName!= null));
-        }
-        {
-            String theLastName;
-            theLastName = this.getLastName();
-            strategy.appendField(locator, this, "lastName", buffer, theLastName, (this.lastName!= null));
         }
         return buffer;
     }
@@ -205,24 +137,14 @@ public class Submitter implements HashCode2, ToString2
     public int hashCode(ObjectLocator locator, HashCodeStrategy2 strategy) {
         int currentHashCode = 1;
         {
+            String theSubmissionId;
+            theSubmissionId = this.getSubmissionId();
+            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "submissionId", theSubmissionId), currentHashCode, theSubmissionId, (this.submissionId!= null));
+        }
+        {
             String theSubmitterId;
             theSubmitterId = this.getSubmitterId();
             currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "submitterId", theSubmitterId), currentHashCode, theSubmitterId, (this.submitterId!= null));
-        }
-        {
-            String theEmail;
-            theEmail = this.getEmail();
-            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "email", theEmail), currentHashCode, theEmail, (this.email!= null));
-        }
-        {
-            String theFirstName;
-            theFirstName = this.getFirstName();
-            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "firstName", theFirstName), currentHashCode, theFirstName, (this.firstName!= null));
-        }
-        {
-            String theLastName;
-            theLastName = this.getLastName();
-            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "lastName", theLastName), currentHashCode, theLastName, (this.lastName!= null));
         }
         return currentHashCode;
     }
