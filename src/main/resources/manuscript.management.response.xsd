@@ -53,12 +53,36 @@
 		</xsd:complexContent>
 	</xsd:complexType>
 
-	<xsd:complexType name="SaveSubmissionDataResponse">
+	<xsd:complexType name="saveSubmissionDataResponse">
 		<xsd:complexContent>
 			<xsd:extension base="bean:basicResponse">
 				<xsd:sequence>
 					<xsd:element name="Submission" type="bean:submission" />
 				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="searchAuthorResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="removeSubmissionResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="submitSubmissionResponse">
+		<xsd:complexContent>
+			<xsd:extension base="bean:basicResponse">
+				
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>

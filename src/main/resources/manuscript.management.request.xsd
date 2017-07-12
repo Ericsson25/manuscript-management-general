@@ -13,9 +13,27 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name="SaveSubmissionDataRequest">
+	<xsd:complexType name="saveSubmissionDataRequest">
 		<xsd:sequence>
 			<xsd:element name="submission" type="bean:submission" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="searchAuthorRequest">
+		<xsd:sequence>
+			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="removeSubmissionRequest">
+		<xsd:sequence>
+			<xsd:element name="submissionId" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="submitSubmissionRequest">
+		<xsd:sequence>
+			
 		</xsd:sequence>
 	</xsd:complexType>
 

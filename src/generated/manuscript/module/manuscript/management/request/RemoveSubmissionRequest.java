@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.manuscript.management.request;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -24,17 +24,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for checkSubmissionExistence complex type.
+ * <p>Java class for removeSubmissionRequest complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="checkSubmissionExistence"&gt;
+ * &lt;complexType name="removeSubmissionRequest"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="submissionId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="submitterId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -44,19 +43,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "checkSubmissionExistence", propOrder = {
-    "submissionId",
-    "submitterId"
+@XmlType(name = "removeSubmissionRequest", propOrder = {
+    "submissionId"
 })
-public class CheckSubmissionExistence implements HashCode2, ToString2
+public class RemoveSubmissionRequest implements HashCode2, ToString2
 {
 
     @XmlElement(required = true)
     @NotNull
     protected String submissionId;
-    @XmlElement(required = true)
-    @NotNull
-    protected String submitterId;
 
     /**
      * Gets the value of the submissionId property.
@@ -82,30 +77,6 @@ public class CheckSubmissionExistence implements HashCode2, ToString2
         this.submissionId = value;
     }
 
-    /**
-     * Gets the value of the submitterId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSubmitterId() {
-        return submitterId;
-    }
-
-    /**
-     * Sets the value of the submitterId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSubmitterId(String value) {
-        this.submitterId = value;
-    }
-
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -126,11 +97,6 @@ public class CheckSubmissionExistence implements HashCode2, ToString2
             theSubmissionId = this.getSubmissionId();
             strategy.appendField(locator, this, "submissionId", buffer, theSubmissionId, (this.submissionId!= null));
         }
-        {
-            String theSubmitterId;
-            theSubmitterId = this.getSubmitterId();
-            strategy.appendField(locator, this, "submitterId", buffer, theSubmitterId, (this.submitterId!= null));
-        }
         return buffer;
     }
 
@@ -140,11 +106,6 @@ public class CheckSubmissionExistence implements HashCode2, ToString2
             String theSubmissionId;
             theSubmissionId = this.getSubmissionId();
             currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "submissionId", theSubmissionId), currentHashCode, theSubmissionId, (this.submissionId!= null));
-        }
-        {
-            String theSubmitterId;
-            theSubmitterId = this.getSubmitterId();
-            currentHashCode = strategy.hashCode(LocatorUtils.property(locator, "submitterId", theSubmitterId), currentHashCode, theSubmitterId, (this.submitterId!= null));
         }
         return currentHashCode;
     }
