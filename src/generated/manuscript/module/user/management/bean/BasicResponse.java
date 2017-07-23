@@ -6,23 +6,13 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import manuscript.module.manuscript.management.response.AuthorPreloadResponse;
-import manuscript.module.manuscript.management.response.EditorPreloadResponse;
-import manuscript.module.manuscript.management.response.FileUploadResponse;
-import manuscript.module.manuscript.management.response.GetSubmissionDataResponse;
-import manuscript.module.manuscript.management.response.RemoveSubmissionResponse;
-import manuscript.module.manuscript.management.response.ReviewerPreloadResponse;
-import manuscript.module.manuscript.management.response.SaveSubmissionDataResponse;
-import manuscript.module.manuscript.management.response.SearchAuthorResponse;
-import manuscript.module.manuscript.management.response.SubmitSubmissionResponse;
 
 
 /**
@@ -49,17 +39,6 @@ import manuscript.module.manuscript.management.response.SubmitSubmissionResponse
 @XmlType(name = "basicResponse", propOrder = {
     "exceptionMessage",
     "successMessage"
-})
-@XmlSeeAlso({
-    AuthorPreloadResponse.class,
-    ReviewerPreloadResponse.class,
-    EditorPreloadResponse.class,
-    FileUploadResponse.class,
-    GetSubmissionDataResponse.class,
-    SaveSubmissionDataResponse.class,
-    SearchAuthorResponse.class,
-    RemoveSubmissionResponse.class,
-    SubmitSubmissionResponse.class
 })
 public class BasicResponse {
 

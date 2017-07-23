@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,17 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for checkSubmissionExistence complex type.
+ * <p>Java class for academicDisciplines complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="checkSubmissionExistence"&gt;
+ * &lt;complexType name="academicDisciplines"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="submissionId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="submitterId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="AcademicDisciplinesId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="AcademicDisciplinesName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,65 +36,65 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "checkSubmissionExistence", propOrder = {
-    "submissionId",
-    "submitterId"
+@XmlType(name = "academicDisciplines", propOrder = {
+    "academicDisciplinesId",
+    "academicDisciplinesName"
 })
-public class CheckSubmissionExistence {
+public class AcademicDisciplines {
 
-    @XmlElement(required = true)
+    @XmlElement(name = "AcademicDisciplinesId", required = true)
     @NotNull
-    protected String submissionId;
-    @XmlElement(required = true)
+    protected String academicDisciplinesId;
+    @XmlElement(name = "AcademicDisciplinesName", required = true)
     @NotNull
-    protected String submitterId;
+    protected String academicDisciplinesName;
 
     /**
-     * Gets the value of the submissionId property.
+     * Gets the value of the academicDisciplinesId property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSubmissionId() {
-        return submissionId;
+    public String getAcademicDisciplinesId() {
+        return academicDisciplinesId;
     }
 
     /**
-     * Sets the value of the submissionId property.
+     * Sets the value of the academicDisciplinesId property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSubmissionId(String value) {
-        this.submissionId = value;
+    public void setAcademicDisciplinesId(String value) {
+        this.academicDisciplinesId = value;
     }
 
     /**
-     * Gets the value of the submitterId property.
+     * Gets the value of the academicDisciplinesName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSubmitterId() {
-        return submitterId;
+    public String getAcademicDisciplinesName() {
+        return academicDisciplinesName;
     }
 
     /**
-     * Sets the value of the submitterId property.
+     * Sets the value of the academicDisciplinesName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSubmitterId(String value) {
-        this.submitterId = value;
+    public void setAcademicDisciplinesName(String value) {
+        this.academicDisciplinesName = value;
     }
 
 }

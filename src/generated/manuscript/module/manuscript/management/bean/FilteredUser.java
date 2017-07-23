@@ -16,16 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for keyword complex type.
+ * <p>Java class for filteredUser complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="keyword"&gt;
+ * &lt;complexType name="filteredUser"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Keyword" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="FullName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,37 +36,65 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "keyword", propOrder = {
-    "keyword"
+@XmlType(name = "filteredUser", propOrder = {
+    "fullName",
+    "email"
 })
-public class Keyword {
+public class FilteredUser {
 
-    @XmlElement(name = "Keyword", required = true)
+    @XmlElement(name = "FullName", required = true)
     @NotNull
-    protected String keyword;
+    protected String fullName;
+    @XmlElement(name = "Email", required = true)
+    @NotNull
+    protected String email;
 
     /**
-     * Gets the value of the keyword property.
+     * Gets the value of the fullName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getKeyword() {
-        return keyword;
+    public String getFullName() {
+        return fullName;
     }
 
     /**
-     * Sets the value of the keyword property.
+     * Sets the value of the fullName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setKeyword(String value) {
-        this.keyword = value;
+    public void setFullName(String value) {
+        this.fullName = value;
+    }
+
+    /**
+     * Gets the value of the email property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets the value of the email property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEmail(String value) {
+        this.email = value;
     }
 
 }

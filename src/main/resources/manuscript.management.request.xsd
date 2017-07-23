@@ -5,35 +5,37 @@
 
 	<xsd:complexType name="saveSubmissionRequest">
 		<xsd:sequence>
-			<xsd:element name="submissionId" type="xsd:string" />
-			<xsd:element name="submissionStatus" type="bean:SubmissionStatus" />
-			<xsd:element name="authorId" type="xsd:string" />
-			<xsd:element name="filePath" type="xsd:string" />
-			<xsd:element name="version" type="xsd:int" />
+			<xsd:element name="SubmissionId" type="xsd:string" />
+			<xsd:element name="SubmissionStatus" type="bean:SubmissionStatus" />
+			<xsd:element name="AuthorId" type="xsd:string" />
+			<xsd:element name="FilePath" type="xsd:string" />
+			<xsd:element name="Version" type="xsd:int" />
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="saveSubmissionDataRequest">
 		<xsd:sequence>
-			<xsd:element name="submission" type="bean:submission" />
+			<xsd:element name="Submission" type="bean:submission" />
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	<xsd:complexType name="searchAuthorRequest">
 		<xsd:sequence>
-			
+			<xsd:element name="FirstName" type="xsd:string" />
+			<xsd:element name="LastName" type="xsd:string" />
+			<xsd:element name="Email" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	<xsd:complexType name="removeSubmissionRequest">
 		<xsd:sequence>
-			<xsd:element name="submissionId" type="xsd:string" />
+			<xsd:element name="SubmissionId" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	<xsd:complexType name="submitSubmissionRequest">
 		<xsd:sequence>
-			
+			<xsd:element name="Submission" type="bean:submission" />
 		</xsd:sequence>
 	</xsd:complexType>
 

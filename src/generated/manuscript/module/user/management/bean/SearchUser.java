@@ -6,29 +6,30 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for submitter complex type.
+ * <p>Java class for searchUser complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="submitter"&gt;
+ * &lt;complexType name="searchUser"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="submitterId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="FirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="LastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Role" type="{http://manuscript/module/user/management/bean}roles"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,74 +39,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "submitter", propOrder = {
-    "submitterId",
-    "email",
+@XmlType(name = "searchUser", propOrder = {
     "firstName",
-    "lastName"
+    "lastName",
+    "email",
+    "role"
 })
-public class Submitter {
+public class SearchUser {
 
-    @XmlElement(required = true)
-    @NotNull
-    protected String submitterId;
-    @XmlElement(name = "Email", required = true)
-    @NotNull
-    protected String email;
     @XmlElement(name = "FirstName", required = true)
     @NotNull
     protected String firstName;
     @XmlElement(name = "LastName", required = true)
     @NotNull
     protected String lastName;
-
-    /**
-     * Gets the value of the submitterId property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSubmitterId() {
-        return submitterId;
-    }
-
-    /**
-     * Sets the value of the submitterId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSubmitterId(String value) {
-        this.submitterId = value;
-    }
-
-    /**
-     * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEmail(String value) {
-        this.email = value;
-    }
+    @XmlElement(name = "Email", required = true)
+    @NotNull
+    protected String email;
+    @XmlElement(name = "Role", required = true)
+    @XmlSchemaType(name = "string")
+    @NotNull
+    protected Roles role;
 
     /**
      * Gets the value of the firstName property.
@@ -153,6 +107,54 @@ public class Submitter {
      */
     public void setLastName(String value) {
         this.lastName = value;
+    }
+
+    /**
+     * Gets the value of the email property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets the value of the email property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEmail(String value) {
+        this.email = value;
+    }
+
+    /**
+     * Gets the value of the role property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Roles }
+     *     
+     */
+    public Roles getRole() {
+        return role;
+    }
+
+    /**
+     * Sets the value of the role property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Roles }
+     *     
+     */
+    public void setRole(Roles value) {
+        this.role = value;
     }
 
 }

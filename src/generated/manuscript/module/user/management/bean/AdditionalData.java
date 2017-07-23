@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.response;
+package manuscript.module.user.management.bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,23 +15,21 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import manuscript.module.manuscript.management.bean.BasicResponse;
-import manuscript.module.manuscript.management.bean.Submission;
 
 
 /**
- * <p>Java class for authorPreloadResponse complex type.
+ * <p>Java class for additionalData complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authorPreloadResponse"&gt;
+ * &lt;complexType name="additionalData"&gt;
  *   &lt;complexContent&gt;
- *     &lt;extension base="{http://manuscript/module/manuscript/management/bean}basicResponse"&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Submissions" type="{http://manuscript/module/manuscript/management/bean}submission" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DefaultRoles" type="{http://manuscript/module/user/management/bean}role" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
+ *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
@@ -39,50 +37,48 @@ import manuscript.module.manuscript.management.bean.Submission;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authorPreloadResponse", propOrder = {
-    "submissions"
+@XmlType(name = "additionalData", propOrder = {
+    "defaultRoles"
 })
-public class AuthorPreloadResponse
-    extends BasicResponse
-{
+public class AdditionalData {
 
-    @XmlElement(name = "Submissions")
+    @XmlElement(name = "DefaultRoles")
     @Valid
-    protected List<Submission> submissions;
+    protected List<Role> defaultRoles;
 
     /**
-     * Gets the value of the submissions property.
+     * Gets the value of the defaultRoles property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the submissions property.
+     * This is why there is not a <CODE>set</CODE> method for the defaultRoles property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubmissions().add(newItem);
+     *    getDefaultRoles().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Submission }
+     * {@link Role }
      * 
      * 
      */
-    public List<Submission> getSubmissions() {
-        if (submissions == null) {
-            submissions = new ArrayList<Submission>();
+    public List<Role> getDefaultRoles() {
+        if (defaultRoles == null) {
+            defaultRoles = new ArrayList<Role>();
         }
-        return this.submissions;
+        return this.defaultRoles;
     }
 
-    public void setSubmissions(List<Submission> value) {
-        this.submissions = null;
+    public void setDefaultRoles(List<Role> value) {
+        this.defaultRoles = null;
         if (value!= null) {
-            List<Submission> draftl = this.getSubmissions();
+            List<Role> draftl = this.getDefaultRoles();
             draftl.addAll(value);
         }
     }

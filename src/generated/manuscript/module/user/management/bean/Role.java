@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,16 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for keyword complex type.
+ * <p>Java class for role complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="keyword"&gt;
+ * &lt;complexType name="role"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Keyword" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="RoleId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Role" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,37 +36,57 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "keyword", propOrder = {
-    "keyword"
+@XmlType(name = "role", propOrder = {
+    "roleId",
+    "role"
 })
-public class Keyword {
+public class Role {
 
-    @XmlElement(name = "Keyword", required = true)
+    @XmlElement(name = "RoleId")
     @NotNull
-    protected String keyword;
+    protected int roleId;
+    @XmlElement(name = "Role", required = true)
+    @NotNull
+    protected String role;
 
     /**
-     * Gets the value of the keyword property.
+     * Gets the value of the roleId property.
+     * 
+     */
+    public int getRoleId() {
+        return roleId;
+    }
+
+    /**
+     * Sets the value of the roleId property.
+     * 
+     */
+    public void setRoleId(int value) {
+        this.roleId = value;
+    }
+
+    /**
+     * Gets the value of the role property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getKeyword() {
-        return keyword;
+    public String getRole() {
+        return role;
     }
 
     /**
-     * Sets the value of the keyword property.
+     * Sets the value of the role property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setKeyword(String value) {
-        this.keyword = value;
+    public void setRole(String value) {
+        this.role = value;
     }
 
 }

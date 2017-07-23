@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,17 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for checkSubmissionExistence complex type.
+ * <p>Java class for password complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="checkSubmissionExistence"&gt;
+ * &lt;complexType name="password"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="submissionId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="submitterId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Password" type="{http://manuscript/module/user/management/bean}passwordType"/&gt;
+ *         &lt;element name="PasswordAgain" type="{http://manuscript/module/user/management/bean}passwordType"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,65 +36,65 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "checkSubmissionExistence", propOrder = {
-    "submissionId",
-    "submitterId"
+@XmlType(name = "password", propOrder = {
+    "password",
+    "passwordAgain"
 })
-public class CheckSubmissionExistence {
+public class Password {
 
-    @XmlElement(required = true)
+    @XmlElement(name = "Password", required = true)
     @NotNull
-    protected String submissionId;
-    @XmlElement(required = true)
+    protected String password;
+    @XmlElement(name = "PasswordAgain", required = true)
     @NotNull
-    protected String submitterId;
+    protected String passwordAgain;
 
     /**
-     * Gets the value of the submissionId property.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSubmissionId() {
-        return submissionId;
+    public String getPassword() {
+        return password;
     }
 
     /**
-     * Sets the value of the submissionId property.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSubmissionId(String value) {
-        this.submissionId = value;
+    public void setPassword(String value) {
+        this.password = value;
     }
 
     /**
-     * Gets the value of the submitterId property.
+     * Gets the value of the passwordAgain property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSubmitterId() {
-        return submitterId;
+    public String getPasswordAgain() {
+        return passwordAgain;
     }
 
     /**
-     * Sets the value of the submitterId property.
+     * Sets the value of the passwordAgain property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSubmitterId(String value) {
-        this.submitterId = value;
+    public void setPasswordAgain(String value) {
+        this.passwordAgain = value;
     }
 
 }

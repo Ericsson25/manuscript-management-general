@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,19 +16,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for author complex type.
+ * <p>Java class for passwordDetails complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="author"&gt;
+ * &lt;complexType name="passwordDetails"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="PasswordId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="UserId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="FirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="LastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="BCryptedPassword" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,26 +37,46 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "author", propOrder = {
+@XmlType(name = "passwordDetails", propOrder = {
+    "passwordId",
     "userId",
-    "email",
-    "firstName",
-    "lastName"
+    "bCryptedPassword"
 })
-public class Author {
+public class PasswordDetails {
 
+    @XmlElement(name = "PasswordId", required = true)
+    @NotNull
+    protected String passwordId;
     @XmlElement(name = "UserId", required = true)
     @NotNull
     protected String userId;
-    @XmlElement(name = "Email", required = true)
+    @XmlElement(name = "BCryptedPassword", required = true)
     @NotNull
-    protected String email;
-    @XmlElement(name = "FirstName", required = true)
-    @NotNull
-    protected String firstName;
-    @XmlElement(name = "LastName", required = true)
-    @NotNull
-    protected String lastName;
+    protected String bCryptedPassword;
+
+    /**
+     * Gets the value of the passwordId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPasswordId() {
+        return passwordId;
+    }
+
+    /**
+     * Sets the value of the passwordId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPasswordId(String value) {
+        this.passwordId = value;
+    }
 
     /**
      * Gets the value of the userId property.
@@ -84,75 +103,27 @@ public class Author {
     }
 
     /**
-     * Gets the value of the email property.
+     * Gets the value of the bCryptedPassword property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEmail() {
-        return email;
+    public String getBCryptedPassword() {
+        return bCryptedPassword;
     }
 
     /**
-     * Sets the value of the email property.
+     * Sets the value of the bCryptedPassword property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEmail(String value) {
-        this.email = value;
-    }
-
-    /**
-     * Gets the value of the firstName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Sets the value of the firstName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFirstName(String value) {
-        this.firstName = value;
-    }
-
-    /**
-     * Gets the value of the lastName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Sets the value of the lastName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLastName(String value) {
-        this.lastName = value;
+    public void setBCryptedPassword(String value) {
+        this.bCryptedPassword = value;
     }
 
 }

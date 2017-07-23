@@ -6,7 +6,7 @@
 //
 
 
-package manuscript.module.manuscript.management.bean;
+package manuscript.module.user.management.bean;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,16 +16,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for keyword complex type.
+ * <p>Java class for error complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="keyword"&gt;
+ * &lt;complexType name="error"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Keyword" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Field" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Message" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,37 +36,65 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "keyword", propOrder = {
-    "keyword"
+@XmlType(name = "error", propOrder = {
+    "field",
+    "message"
 })
-public class Keyword {
+public class Error {
 
-    @XmlElement(name = "Keyword", required = true)
+    @XmlElement(name = "Field", required = true)
     @NotNull
-    protected String keyword;
+    protected String field;
+    @XmlElement(name = "Message", required = true)
+    @NotNull
+    protected String message;
 
     /**
-     * Gets the value of the keyword property.
+     * Gets the value of the field property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getKeyword() {
-        return keyword;
+    public String getField() {
+        return field;
     }
 
     /**
-     * Sets the value of the keyword property.
+     * Sets the value of the field property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setKeyword(String value) {
-        this.keyword = value;
+    public void setField(String value) {
+        this.field = value;
+    }
+
+    /**
+     * Gets the value of the message property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * Sets the value of the message property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }
