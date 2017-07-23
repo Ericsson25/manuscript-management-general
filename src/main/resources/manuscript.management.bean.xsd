@@ -3,14 +3,14 @@
 
 	<xsd:import namespace="http://manuscript/module/user/management/bean" schemaLocation="maven:manuscript.module.user.management:user-management-general:jar::!/user.management.bean.xsd" />
 
-	<xsd:simpleType name="Role">
-		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="AUTHOR_ROLE" />
-			<xsd:enumeration value="REVIEWER_ROLE" />
-			<xsd:enumeration value="EDITOR_ROLE" />
-			<xsd:enumeration value="ADMIN_ROLE" />
-		</xsd:restriction>
-	</xsd:simpleType>
+<!-- 	<xsd:simpleType name="Role"> -->
+<!-- 		<xsd:restriction base="usermanagement:Roles"> -->
+<!-- 			<xsd:enumeration value="AUTHOR_ROLE" /> -->
+<!-- 			<xsd:enumeration value="REVIEWER_ROLE" /> -->
+<!-- 			<xsd:enumeration value="EDITOR_ROLE" /> -->
+<!-- 			<xsd:enumeration value="ADMIN_ROLE" /> -->
+<!-- 		</xsd:restriction> -->
+<!-- 	</xsd:simpleType> -->
 
 	<xsd:simpleType name="SubmissionStatus">
 		<xsd:restriction base="xsd:string">
@@ -79,4 +79,10 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
+	<xsd:complexType name="filteredUser">
+		<xsd:sequence>
+			<xsd:element name="FullName" type="xsd:string" />
+			<xsd:element name="Email" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>

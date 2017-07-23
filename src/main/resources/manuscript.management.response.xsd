@@ -62,11 +62,13 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
+
 	<xsd:complexType name="searchAuthorResponse">
 		<xsd:complexContent>
 			<xsd:extension base="bean:basicResponse">
-				
+				<xsd:sequence>
+					<xsd:element name="Authors" type="bean:author" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
