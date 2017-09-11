@@ -85,4 +85,18 @@
 			<xsd:element name="Email" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
+	
+	<xsd:complexType name="manuscriptLifecycleRequest">
+		<xsd:sequence>
+			<xsd:element name="Submission" type="submission" />
+			<xsd:element name="NewStatus" type="SubmissionStatus" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="submitLifecycle">
+		<xsd:complexContent>
+			<xsd:extension base="manuscriptLifecycleRequest">
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 </xsd:schema>

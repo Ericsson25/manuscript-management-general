@@ -6,23 +6,22 @@
 //
 
 
-package manuscript.module.manuscript.management.response;
+package manuscript.module.manuscript.management.bean;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import manuscript.module.manuscript.management.bean.BasicResponse;
 
 
 /**
- * <p>Java class for submitSubmissionResponse complex type.
+ * <p>Java class for submitLifecycle complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="submitSubmissionResponse"&gt;
+ * &lt;complexType name="submitLifecycle"&gt;
  *   &lt;complexContent&gt;
- *     &lt;extension base="{http://manuscript/module/manuscript/management/bean}basicResponse"&gt;
+ *     &lt;extension base="{http://manuscript/module/manuscript/management/bean}manuscriptLifecycleRequest"&gt;
  *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -31,9 +30,9 @@ import manuscript.module.manuscript.management.bean.BasicResponse;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "submitSubmissionResponse")
-public class SubmitSubmissionResponse
-    extends BasicResponse
+@XmlType(name = "submitLifecycle")
+public class SubmitLifecycle
+    extends ManuscriptLifecycleRequest
 {
 
 

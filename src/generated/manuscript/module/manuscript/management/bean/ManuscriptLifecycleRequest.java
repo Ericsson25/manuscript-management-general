@@ -6,28 +6,30 @@
 //
 
 
-package manuscript.module.manuscript.management.request;
+package manuscript.module.manuscript.management.bean;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import manuscript.module.manuscript.management.bean.Submission;
 
 
 /**
- * <p>Java class for submitSubmissionRequest complex type.
+ * <p>Java class for manuscriptLifecycleRequest complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="submitSubmissionRequest"&gt;
+ * &lt;complexType name="manuscriptLifecycleRequest"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Submission" type="{http://manuscript/module/manuscript/management/bean}submission"/&gt;
+ *         &lt;element name="NewStatus" type="{http://manuscript/module/manuscript/management/bean}SubmissionStatus"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,15 +39,23 @@ import manuscript.module.manuscript.management.bean.Submission;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "submitSubmissionRequest", propOrder = {
-    "submission"
+@XmlType(name = "manuscriptLifecycleRequest", propOrder = {
+    "submission",
+    "newStatus"
 })
-public class SubmitSubmissionRequest {
+@XmlSeeAlso({
+    SubmitLifecycle.class
+})
+public class ManuscriptLifecycleRequest {
 
     @XmlElement(name = "Submission", required = true)
     @NotNull
     @Valid
     protected Submission submission;
+    @XmlElement(name = "NewStatus", required = true)
+    @XmlSchemaType(name = "string")
+    @NotNull
+    protected SubmissionStatus newStatus;
 
     /**
      * Gets the value of the submission property.
@@ -69,6 +79,30 @@ public class SubmitSubmissionRequest {
      */
     public void setSubmission(Submission value) {
         this.submission = value;
+    }
+
+    /**
+     * Gets the value of the newStatus property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SubmissionStatus }
+     *     
+     */
+    public SubmissionStatus getNewStatus() {
+        return newStatus;
+    }
+
+    /**
+     * Sets the value of the newStatus property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SubmissionStatus }
+     *     
+     */
+    public void setNewStatus(SubmissionStatus value) {
+        this.newStatus = value;
     }
 
 }
